@@ -20,8 +20,6 @@ def to_find():
             to_find.append(params[i])
      return to_find
 
-def cannot_solve():
-    print("mere se na ho payega")
 
 def solve_i_vel():
     try:
@@ -84,7 +82,6 @@ def solve(param_values):
              i_vel=solve_i_vel()
 
         except:
-            cannot_solve()
             i_vel=str("cannot solve")
     else:
         i_vel=param_values[0]
@@ -94,7 +91,6 @@ def solve(param_values):
              f_vel=solve_f_vel()
 
         except:
-            cannot_solve()
             f_vel=str("cannot solve")
     else:
         f_vel=param_values[1]
@@ -103,7 +99,6 @@ def solve(param_values):
              acc=solve_acc()
 
         except:
-            cannot_solve()
             acc=str("cannot solve")
     else:
         acc=param_values[2]
@@ -112,7 +107,6 @@ def solve(param_values):
              dis=solve_dis()
 
         except:
-            cannot_solve()
             dis=str("cannot solve")
     else:
         dis=param_values[3]
@@ -121,7 +115,6 @@ def solve(param_values):
             time= solve_time()
 
         except:
-            cannot_solve()
             time=str("cannot solve")
     else:
         time=param_values[4]
@@ -149,9 +142,6 @@ combined=dict(zip(params,param_values))
 solved_param_values=solve(param_values)
 solution=dict(zip(params,solved_param_values))
 main()
-
-    
-   
 
 
 
