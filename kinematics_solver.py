@@ -11,14 +11,12 @@ def user_input():
 
 param_values=user_input()
 
-def solvable():
-  if param_values.count("unknown")>2:
-     solvable=False
-  else:
-     solvable=True
-  return solvable
+def solvable(param_values):
+  return param_values.count("unknown")<=2
 
-solvable=solvable()
+
+
+solvable=solvable(param_values)
 def sort():
    to_find=[]
    given=[]
@@ -87,12 +85,12 @@ def solve_dis(given):
 def solve_time(given):
     if "i_vel" and "acc" and "f_vel" in given:
          var=(f_vel-i_vel)/acc
-    elif "i_vel" and "acc" and "f_vel" in given:
-         var=(-i_vel+(i_vel**2-2*acc*dis))/acc
+    elif "i_vel" and "acc" and "dis" in given:
+         var=(-i_vel+(i_vel**2-2*acc*dis)**0.5)/acc
     elif "i_vel" and "f_vel" and "dis" in given:
          var=2*dis/(i_vel+f_vel)
     elif "acc" and "f_vel" and "dis" in given:
-         var=(f_vel-(f_vel**2-2*acc*dis))/acc
+         var=(f_vel-(f_vel**2-2*acc*dis)**0.5)/acc
     else:
         raise ValueError("cannot solve")
     return var
@@ -117,7 +115,7 @@ def solve(param_values):
          
 
 def main():
-   if solvable==True:
+   if solvable:
       solved_param_values=solve(param_values)
       solution=dict(zip(params,solved_param_values))
       print(solution)
