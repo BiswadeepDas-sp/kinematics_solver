@@ -38,7 +38,7 @@ def solve_i_vel(given):
     if "f_vel" in given and "acc" in given and "time" in given:
         return f_vel - acc * time
     elif "f_vel" in given and "acc" in given and "dis" in given:
-        return ((f_vel ** 2) - 2 * acc * dis) ** 0.5
+        return ((f_vel ** 2) - 2 * acc * dis) ** 0.5 if (f_vel ** 2) - 2 * acc * dis >= 0 else "unknown"
     elif "acc" in given and "dis" in given and "time" in given:
         return (dis - 0.5 * acc * time ** 2) / time
     elif "f_vel" in given and "dis" in given and "time" in given:
@@ -86,11 +86,13 @@ def solve_time(given):
     if "i_vel" in given and "acc" in given and "f_vel" in given:
         return (f_vel - i_vel) / acc
     elif "i_vel" in given and "acc" in given and "dis" in given:
-        return (-i_vel + (i_vel ** 2 + 2 * acc * dis) ** 0.5) / acc
+        discriminant = i_vel ** 2 + 2 * acc * dis
+        return (-i_vel + discriminant ** 0.5) / acc if discriminant >= 0 else "unknown"
     elif "i_vel" in given and "f_vel" in given and "dis" in given:
         return 2 * dis / (i_vel + f_vel)
     elif "acc" in given and "f_vel" in given and "dis" in given:
-        return (f_vel - (f_vel ** 2 - 2 * acc * dis) ** 0.5) / acc
+        discriminant = f_vel ** 2 - 2 * acc * dis
+        return (f_vel - discriminant ** 0.5) / acc if discriminant >= 0 else "unknown"
     else:
         raise ValueError("Cannot solve for time with the given parameters.")
 
