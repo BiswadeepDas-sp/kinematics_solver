@@ -16,7 +16,7 @@ def solvable(param_values):
 
 
 
-solvable=solvable(param_values)
+is_solvable=solvable(param_values)
 def sort():
    to_find=[]
    given=[]
@@ -115,7 +115,7 @@ def solve(param_values):
          
 
 def main():
-   if solvable:
+   if is_solvable:
       solved_param_values=solve(param_values)
       solution=dict(zip(params,solved_param_values))
       print(solution)
