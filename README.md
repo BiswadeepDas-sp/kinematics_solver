@@ -76,11 +76,20 @@ invalid response
 ### Kinematic Equations Used
 The program uses the following kinematic equations to solve for the unknowns:
 
-1. **Equation 1:** \( v_f = v_i + a \cdot t \)
-2. **Equation 2:** \( v_f^2 = v_i^2 + 2 \cdot a \cdot d \)
-3. **Equation 3:** \( d = v_i \cdot t + \frac{1}{2} \cdot a \cdot t^2 \)
-4. **Equation 4:** \( d = \frac{(v_i + v_f)}{2} \cdot t \)
-5. **Equation 5:** \( t = \frac{v_f - v_i}{a} \)
+1. **Equation 1:**
+   $$v_f = v_i + a \cdot t$$
+
+2. **Equation 2:**
+   $$v_f^2 = v_i^2 + 2 \cdot a \cdot d$$
+
+3. **Equation 3:**
+   $$d = v_i \cdot t + \frac{1}{2} \cdot a \cdot t^2$$
+
+4. **Equation 4:**
+   $$d = \frac{(v_i + v_f)}{2} \cdot t$$
+
+5. **Equation 5:**
+   $$t = \frac{v_f - v_i}{a}$$
 
 Each equation corresponds to a specific combination of known variables, and the program dynamically selects the appropriate one based on the input.
 
